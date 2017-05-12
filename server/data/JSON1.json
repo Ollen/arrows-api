@@ -1,0 +1,534 @@
+{
+  "arrowsJSON": {
+    "trips": [
+      {
+        "tripId": 2037,
+        "remarks": null,
+        "tripDate": "May 10, 2017",
+        "depTime": null,
+        "arrivalTime": null,
+        "duration": 0,
+        "isSpecial": false,
+        "spNumPass": 0,
+        "purpose": null,
+        "statusCode": 24,
+        "vehicleId": null,
+        "tripSchedId": 117,
+        "driverId": 0
+      },
+      {
+        "tripId": 2038,
+        "remarks": null,
+        "tripDate": "May 10, 2017",
+        "depTime": null,
+        "arrivalTime": null,
+        "duration": 0,
+        "isSpecial": false,
+        "spNumPass": 0,
+        "purpose": null,
+        "statusCode": 24,
+        "vehicleId": null,
+        "tripSchedId": 118,
+        "driverId": 0
+      }
+    ],
+    "passengers": [
+      {
+        "passengerID": 1,
+        "feedbackOn": null,
+        "name": null,
+        "feedback": 0,
+        "tapIn": null,
+        "tapOut": null,
+        "disembarkationPt": null,
+        "destination": "STC",
+        "isChance": false,
+        "reservationNum": 1,
+        "vehicleID": 0,
+        "driverID": 0
+      },
+      {
+        "passengerID": 2,
+        "feedbackOn": null,
+        "name": null,
+        "feedback": 0,
+        "tapIn": null,
+        "tapOut": null,
+        "disembarkationPt": null,
+        "destination": "STC",
+        "isChance": false,
+        "reservationNum": 2,
+        "vehicleID": 0,
+        "driverID": 0
+      },
+      {
+        "passengerID": 3,
+        "feedbackOn": null,
+        "name": null,
+        "feedback": 0,
+        "tapIn": null,
+        "tapOut": null,
+        "disembarkationPt": null,
+        "destination": "STC",
+        "isChance": false,
+        "reservationNum": 3,
+        "vehicleID": 0,
+        "driverID": 0
+      },
+      {
+        "passengerID": 4,
+        "feedbackOn": null,
+        "name": null,
+        "feedback": 0,
+        "tapIn": null,
+        "tapOut": null,
+        "disembarkationPt": null,
+        "destination": "Manila",
+        "isChance": false,
+        "reservationNum": 4,
+        "vehicleID": 0,
+        "driverID": 0
+      },
+      {
+        "passengerID": 5,
+        "feedbackOn": null,
+        "name": null,
+        "feedback": 0,
+        "tapIn": null,
+        "tapOut": null,
+        "disembarkationPt": null,
+        "destination": "Manila",
+        "isChance": false,
+        "reservationNum": 5,
+        "vehicleID": 0,
+        "driverID": 0
+      },
+      {
+        "passengerID": 6,
+        "feedbackOn": null,
+        "name": null,
+        "feedback": 0,
+        "tapIn": null,
+        "tapOut": null,
+        "disembarkationPt": null,
+        "destination": "Manila",
+        "isChance": false,
+        "reservationNum": 6,
+        "vehicleID": 0,
+        "driverID": 0
+      }
+    ],
+    "drivers": [
+      {
+        "driverId": 5,
+        "lastName": "Seo",
+        "firstName": "Jake",
+        "nickname": "Jake",
+        "isAvailable": false,
+        "statusCode": 20,
+        "statusName": "Absent",
+        "modelList": [
+          "Minibus",
+          "Van"
+        ]
+      },
+      {
+        "driverId": 67,
+        "lastName": "Tan",
+        "firstName": "Shayane",
+        "nickname": "Shark",
+        "isAvailable": true,
+        "statusCode": 18,
+        "statusName": "Available",
+        "modelList": [
+          "Coaster",
+          "Hello"
+        ]
+      },
+      {
+        "driverId": 236,
+        "lastName": "Erive",
+        "firstName": "Winona",
+        "nickname": "Erive",
+        "isAvailable": true,
+        "statusCode": 18,
+        "statusName": "Available",
+        "modelList": [
+          "Coaster",
+          "Minibus"
+        ]
+      },
+      {
+        "driverId": 345,
+        "lastName": "Cote",
+        "firstName": "Christian",
+        "nickname": "XGB",
+        "isAvailable": true,
+        "statusCode": 18,
+        "statusName": "Available",
+        "modelList": [
+
+        ]
+      }
+    ],
+    "vehicles": [
+      {
+        "vehicleId": "1",
+        "vehicleType": "Van",
+        "capacity": 30,
+        "image": null,
+        "plateNum": "AAA 203",
+        "model": "Grandia",
+        "brand": "Toyota",
+        "status": "In Use",
+        "statusCode": 12
+      },
+      {
+        "vehicleId": "123",
+        "vehicleType": "",
+        "capacity": 30,
+        "image": null,
+        "plateNum": "NFO 130",
+        "model": "Starex",
+        "brand": "Toyota",
+        "status": "In Use",
+        "statusCode": 12
+      },
+      {
+        "vehicleId": "Hake",
+        "vehicleType": "Coaster",
+        "capacity": 30,
+        "image": null,
+        "plateNum": "Jae 456",
+        "model": "JakeSeo",
+        "brand": "JakeSeo",
+        "status": "In Use",
+        "statusCode": 12
+      },
+      {
+        "vehicleId": "HakeSeo",
+        "vehicleType": "Coaster",
+        "capacity": 40,
+        "image": null,
+        "plateNum": "Jae 234",
+        "model": "JakeSeo",
+        "brand": "JakeSeo",
+        "status": "On Loan",
+        "statusCode": 13
+      },
+      {
+        "vehicleId": "hello1",
+        "vehicleType": "Private Car",
+        "capacity": 8,
+        "image": null,
+        "plateNum": "NFO 130",
+        "model": "Fortuner",
+        "brand": "Toyota",
+        "status": "On Loan",
+        "statusCode": 13
+      },
+      {
+        "vehicleId": "AAA 123",
+        "vehicleType": "Coaster",
+        "capacity": 50,
+        "image": null,
+        "plateNum": "GHO 123",
+        "model": "AHAHA",
+        "brand": "Toyota",
+        "status": "On Loan",
+        "statusCode": 11
+      },
+      {
+        "vehicleId": "BBB 123",
+        "vehicleType": "Minibus",
+        "capacity": 40,
+        "image": null,
+        "plateNum": "Jae 345",
+        "model": "JakeSeo",
+        "brand": "JakeSeo",
+        "status": "On Loan",
+        "statusCode": 11
+      },
+      {
+        "vehicleId": "CCC 123",
+        "vehicleType": "Coaster",
+        "capacity": 50,
+        "image": null,
+        "plateNum": "Sae 456",
+        "model": "JakeSeo",
+        "brand": "JakeSeo",
+        "status": "On Loan",
+        "statusCode": 11
+      }
+    ],
+    "tripScheds": [
+      {
+        "tripSchedId": 117,
+        "tripNum": "AE133",
+        "depTime": "06:00:00 AM",
+        "routeId": 1,
+        "periodId": "1"
+      },
+      {
+        "tripSchedId": 118,
+        "tripNum": "AE133",
+        "depTime": "06:00:00 AM",
+        "routeId": 2,
+        "periodId": "1"
+      }
+    ],
+    "routes": [
+      {
+        "routeId": 1,
+        "origin": "Manila ",
+        "destination": "STC",
+        "routeDescription": null,
+        "lineNum": 1,
+        "tripSchedList": [
+        ],
+        "routeStopList": [
+        ]
+      },
+      {
+        "routeId": 2,
+        "origin": "STC",
+        "destination": "Manila",
+        "routeDescription": null,
+        "lineNum": 1,
+        "tripSchedList": [
+        ],
+        "routeStopList": [
+        ]
+      }
+    ],
+    "lines": [
+      {
+        "lineNum": 1,
+        "lineName": "Manila\/STC",
+        "route1": "Manila",
+        "route2": "STC",
+        "routeList": [
+
+        ]
+      },
+      {
+        "lineNum": 2,
+        "lineName": "Manila\/BGC",
+        "route1": "Manila",
+        "route2": "BGC",
+        "routeList": [
+
+        ]
+      }
+    ],
+    "routeStops": [
+      {
+        "stopNum": "3",
+        "order": 2,
+        "routeId": 1,
+        "stopID": 3,
+        "stopName": "Caltex",
+        "latitude": null,
+        "longitude": null
+      },
+      {
+        "stopNum": "6",
+        "order": 2,
+        "routeId": 2,
+        "stopID": 4,
+        "stopName": "LTI Spine",
+        "latitude": null,
+        "longitude": null
+      },
+      {
+        "stopNum": "5",
+        "order": 2,
+        "routeId": 2,
+        "stopID": 3,
+        "stopName": "Caltex",
+        "latitude": null,
+        "longitude": null
+      },
+      {
+        "stopNum": "4",
+        "order": 2,
+        "routeId": 1,
+        "stopID": 4,
+        "stopName": "LTI Spine",
+        "latitude": null,
+        "longitude": null
+      },
+      {
+        "stopNum": "2",
+        "order": 3,
+        "routeId": 2,
+        "stopID": 2,
+        "stopName": "Manila",
+        "latitude": null,
+        "longitude": null
+      },
+      {
+        "stopNum": "1",
+        "order": 3,
+        "routeId": 1,
+        "stopID": 1,
+        "stopName": "STC",
+        "latitude": null,
+        "longitude": null
+      }
+    ],
+    "stops": [
+      {
+        "stopID": 1,
+        "stopName": "STC",
+        "latitude": "14.26239274435157",
+        "longitude": "121.04346299272925"
+      },
+      {
+        "stopID": 2,
+        "stopName": "Manila",
+        "latitude": "14.563753321394035",
+        "longitude": "120.99407183572089"
+      },
+      {
+        "stopID": 3,
+        "stopName": "Caltex",
+        "latitude": "14.250742618217746",
+        "longitude": "121.06304177743345"
+      },
+      {
+        "stopID": 4,
+        "stopName": "LTI Spine",
+        "latitude": "14.265648568904373",
+        "longitude": "121.05330169450895"
+      }
+    ],
+    "users": [
+      {
+        "idNum": 11302518,
+        "name": "Shayane Tan",
+        "email": "shayane_tan@dlsu.edu.ph",
+        "emergencyContact": "Susan Tan",
+        "emergencyContactNum": "09989749387",
+        "isAdmin": false,
+        "adminPassword": null,
+        "statusCode": 0,
+        "priorityType": "Student"
+      },
+      {
+        "idNum": 11333278,
+        "name": "Xgb",
+        "email": "christian_cote@dlsu.edu.ph",
+        "emergencyContact": null,
+        "emergencyContactNum": null,
+        "isAdmin": false,
+        "adminPassword": null,
+        "statusCode": 0,
+        "priorityType": "Non-Priority"
+      },
+      {
+        "idNum": 11407883,
+        "name": "Aaron Candelaria",
+        "email": "adsfdfas",
+        "emergencyContact": null,
+        "emergencyContactNum": null,
+        "isAdmin": false,
+        "adminPassword": null,
+        "statusCode": 0,
+        "priorityType": "Non-Priority"
+      }
+    ],
+    "reservations": [
+      {
+        "reservationNum": 1,
+        "timestamp": "May 10, 2017",
+        "destination": "STC",
+        "remark": "",
+        "name": "Xgb",
+        "idNum": 11333278,
+        "statusCode": 23,
+        "status": "Auto-Approved",
+        "stopName": null,
+        "tripId": 2037,
+        "stopNum": "1",
+        "isTermReservation": 1,
+        "isFull": false
+      },
+      {
+        "reservationNum": 2,
+        "timestamp": "May 10, 2017",
+        "destination": "STC",
+        "remark": "",
+        "name": "Shayane Tan",
+        "idNum": 11302518,
+        "statusCode": 26,
+        "status": "Auto-Approved",
+        "stopName": null,
+        "tripId": 2037,
+        "stopNum": "1",
+        "isTermReservation": 1,
+        "isFull": false
+      },
+      {
+        "reservationNum": 3,
+        "timestamp": "May 10, 2017",
+        "destination": "STC",
+        "remark": "",
+        "name": "Aaron Candelaria",
+        "idNum": 11407883,
+        "statusCode": 26,
+        "status": "Auto-Approved",
+        "stopName": null,
+        "tripId": 2037,
+        "stopNum": "1",
+        "isTermReservation": 1,
+        "isFull": false
+      },
+      {
+        "reservationNum": 4,
+        "timestamp": "May 10, 2017",
+        "destination": "Manila",
+        "remark": "",
+        "name": "Xgb",
+        "idNum": 11333278,
+        "statusCode": 26,
+        "status": "Auto-Approved",
+        "stopName": null,
+        "tripId": 2038,
+        "stopNum": "1",
+        "isTermReservation": 1,
+        "isFull": false
+      },
+      {
+        "reservationNum": 5,
+        "timestamp": "May 10, 2017",
+        "destination": "Manila",
+        "remark": "",
+        "name": "Shayane Tan",
+        "idNum": 11302518,
+        "statusCode": 26,
+        "status": "Auto-Approved",
+        "stopName": null,
+        "tripId": 2038,
+        "stopNum": "1",
+        "isTermReservation": 1,
+        "isFull": false
+      },
+      {
+        "reservationNum": 6,
+        "timestamp": "May 10, 2017",
+        "destination": "Manila",
+        "remark": "",
+        "name": "Aaron Candelaria",
+        "idNum": 11407883,
+        "statusCode": 23,
+        "status": "Auto-Approved",
+        "stopName": null,
+        "tripId": 2038,
+        "stopNum": "2",
+        "isTermReservation": 1,
+        "isFull": false
+      }
+    ]
+  }
+}
