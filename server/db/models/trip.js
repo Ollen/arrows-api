@@ -25,7 +25,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     duration: {
-      type: "DOUBLE",
+      type: 'DOUBLE',
       allowNull: true
     },
     manageTime: {

@@ -1,13 +1,11 @@
-/**
- * DATABASE_NAME
- * DATABASE_USERNAME
- * DATABASE_PASSWORD
- * 
- * host: DATBASE_HOST
- * port: DATABASE_PORT
- * dialect: DATABASE_DIALECT
- * 
- * define: {
- *    timestamps: false
- * }
- */
+
+const env = {};
+
+env.DATABASE_NAME = 'arrows_express';
+env.DATABASE_USERNAME = 'root';
+env.DATABASE_PASSWORD = 'admin123';
+env.DATABASE_HOST = 'localhost';
+env.DATABASE_PORT = '3306';
+env.DATABASE_DIALECT = 'mysql';
+
+module.exports = env;

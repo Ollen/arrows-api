@@ -3,12 +3,12 @@
  */
 
 const express = require('express');
-const MobileRouter = require('./routes/mobile');
+const MobileAPIRouter = require('./routes/mobile_api');
 
 const port = process.env.PORT || 3000;
 var app = express();
 
-app.use('/mobile', MobileRouter);
+app.use('/arrows/mobile/api', MobileAPIRouter);
 
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);

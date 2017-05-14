@@ -6,6 +6,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 
+const dbHandler = require('./../utils/db_handler');
 var router = express.Router();
 
 // GET /mobile
@@ -18,6 +19,16 @@ router.get('/', (req, res) => {
     console.error('[GET /mobile]Problem parsing JSON file');
   }
   res.json(expressData);
+});
+
+router.get('/test/user', (req, res) => {
+  dbHandler.findAllUsers()
+    .then(users => {
+      res.send(users);
+    }).catch(err => {
+      console.log(err);
+      res.send('Error fetching express data');
+    });
 });
 
 // POST /mobile

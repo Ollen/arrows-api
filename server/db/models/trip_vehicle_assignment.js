@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('trip_vehicle_assignment', {
+  var model = sequelize.define('trip_vehicle_assignment', {
     tripID: {
       type: DataTypes.INTEGER(10),
       allowNull: false,
@@ -29,4 +29,7 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     tableName: 'trip_vehicle_assignment'
   });
+
+  model.removeAttribute('id');
+  return model;
 };
