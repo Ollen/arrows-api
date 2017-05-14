@@ -4,21 +4,21 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const fs = require('fs');
 
 const dbHandler = require('./../utils/db_handler');
 var router = express.Router();
 
 // GET /mobile
 router.get('/', (req, res) => {
-  var expressData = {};
-  try {
-    var rawJSON = fs.readFileSync('server/data/JSON1.json');
-    expressData = JSON.parse(rawJSON);
-  } catch (e) {
-    console.error('[GET /mobile]Problem parsing JSON file');
-  }
-  res.json(expressData);
+  dbHandler.getCurrentExpressData().then(arrowsJSON => {
+    res.send({arrowsJSON});
+  }).catch(err => {
+    console.log(err);
+    res.status(500).send({
+      msg: 'Error fetching data',
+      code: '[500] Internal server error'
+    });
+  });
 });
 
 router.get('/test/user', (req, res) => {
@@ -29,6 +29,16 @@ router.get('/test/user', (req, res) => {
       console.log(err);
       res.send('Error fetching express data');
     });
+});
+
+router.get('/test/driver', (req, res) => {
+  dbHandler.findAllDrivers()
+    .then(users => {
+      res.send(users);
+    }).catch(err => {
+      console.log(err);
+      res.send('Error fetching express data');
+    });  
 });
 
 // POST /mobile
