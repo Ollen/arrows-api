@@ -74,6 +74,12 @@ const getCurrentExpressData = () => {
   });
 };
 
+const updateExpressData = (updateJSON) => {
+  return new Promise((resolve, reject) => {
+    // update data in updateJSON
+  });
+};
+
 // Test purposes
 var findAllUsers = () => {
   return db.user.findAll();
@@ -89,6 +95,7 @@ var findAllDrivers = () => {
 
 module.exports = {
   getCurrentExpressData,
+  updateExpressData,
   findAllUsers,
   findAllDrivers
 };
