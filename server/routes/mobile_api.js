@@ -6,7 +6,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const dbHandler = require('./../utils/db_handler');
+
+var testRouter = require('./tests/mobile_api_test');
 var router = express.Router();
+
+// OPTIONAL: test routers
+router.use('/test', testRouter);
 
 // GET /mobile
 router.get('/', (req, res) => {
@@ -19,26 +24,6 @@ router.get('/', (req, res) => {
       code: '[500] Internal server error'
     });
   });
-});
-
-router.get('/test/user', (req, res) => {
-  dbHandler.findAllUsers()
-    .then(users => {
-      res.send(users);
-    }).catch(err => {
-      console.log(err);
-      res.send('Error fetching express data');
-    });
-});
-
-router.get('/test/driver', (req, res) => {
-  dbHandler.findAllDrivers()
-    .then(users => {
-      res.send(users);
-    }).catch(err => {
-      console.log(err);
-      res.send('Error fetching express data');
-    });  
 });
 
 // POST /mobile
@@ -54,6 +39,7 @@ router.use((err, req, res, next) => {
 
 router.post('/', (req, res) => {
   if (req.is('application/json')) {
+    dbHandler.updateExpressData(req.body);
     return res.send(req.body);
   } else if (req.is('text/*')) {
     try {
