@@ -1,0 +1,758 @@
+{
+  "arrowsJSON": {
+    "trips": [
+      {
+        "tripID": 100,
+        "remarks": "Arrows d-day",
+        "tripDate": "May 10, 2017",
+        "depTime": null,
+        "arrivalTime": null,
+        "duration": null,
+        "tripSchedID": 189,
+        "statusCode": 17,
+        "trip_vehicle_assignment": {
+          "vehicleID": "Hake",
+          "driverID": 5
+        }
+      },
+      {
+        "tripID": 165,
+        "remarks": null,
+        "tripDate": "May 10, 2017",
+        "depTime": null,
+        "arrivalTime": null,
+        "duration": null,
+        "tripSchedID": 190,
+        "statusCode": 17,
+        "trip_vehicle_assignment": {
+          "vehicleID": null,
+          "driverID": null
+        }
+      },
+      {
+        "tripID": 230,
+        "remarks": null,
+        "tripDate": "May 10, 2017",
+        "depTime": null,
+        "arrivalTime": null,
+        "duration": null,
+        "tripSchedID": 191,
+        "statusCode": 17,
+        "trip_vehicle_assignment": {
+          "vehicleID": null,
+          "driverID": null
+        }
+      },
+      {
+        "tripID": 407,
+        "remarks": null,
+        "tripDate": "May 10, 2017",
+        "depTime": null,
+        "arrivalTime": null,
+        "duration": null,
+        "tripSchedID": 194,
+        "statusCode": 17,
+        "trip_vehicle_assignment": {
+          "vehicleID": null,
+          "driverID": null
+        }
+      },
+      {
+        "tripID": 488,
+        "remarks": null,
+        "tripDate": "May 10, 2017",
+        "depTime": null,
+        "arrivalTime": null,
+        "duration": null,
+        "tripSchedID": 195,
+        "statusCode": 17,
+        "trip_vehicle_assignment": {
+          "vehicleID": null,
+          "driverID": null
+        }
+      }
+    ],
+    "passenger": [
+      {
+        "passengerID": 23,
+        "feedbackOn": null,
+        "tapIn": null,
+        "tapOut": null,
+        "disembarkationPt": null,
+        "destination": "STC",
+        "isChance": null,
+        "reservationNum": 41,
+        "vehicleID": null,
+        "driverID": null
+      },
+      {
+        "passengerID": 26,
+        "feedbackOn": null,
+        "tapIn": null,
+        "tapOut": null,
+        "disembarkationPt": null,
+        "destination": "STC",
+        "isChance": null,
+        "reservationNum": 44,
+        "vehicleID": null,
+        "driverID": null
+      },
+      {
+        "passengerID": 27,
+        "feedbackOn": null,
+        "tapIn": null,
+        "tapOut": null,
+        "disembarkationPt": null,
+        "destination": "STC",
+        "isChance": null,
+        "reservationNum": 45,
+        "vehicleID": null,
+        "driverID": null
+      },
+      {
+        "passengerID": 28,
+        "feedbackOn": null,
+        "tapIn": null,
+        "tapOut": null,
+        "disembarkationPt": null,
+        "destination": "STC",
+        "isChance": null,
+        "reservationNum": 46,
+        "vehicleID": null,
+        "driverID": null
+      },
+      {
+        "passengerID": 29,
+        "feedbackOn": null,
+        "tapIn": null,
+        "tapOut": null,
+        "disembarkationPt": null,
+        "destination": "STC",
+        "isChance": null,
+        "reservationNum": 47,
+        "vehicleID": null,
+        "driverID": null
+      }
+    ],
+    "drivers": [
+      {
+        "driverID": 5,
+        "lastName": "Seo",
+        "firstName": "Jake",
+        "nickname": "Jake",
+        "statusCode": 18,
+        "status": {
+          "statusName": "Available",
+          "statusType": "Driver"
+        }
+      },
+      {
+        "driverID": 67,
+        "lastName": "Tan",
+        "firstName": "Shayane",
+        "nickname": "Shark",
+        "statusCode": 33,
+        "status": {
+          "statusName": "Assigned",
+          "statusType": "Driver"
+        }
+      },
+      {
+        "driverID": 236,
+        "lastName": "Erive",
+        "firstName": "Winona",
+        "nickname": "Erive",
+        "statusCode": 33,
+        "status": {
+          "statusName": "Assigned",
+          "statusType": "Driver"
+        }
+      },
+      {
+        "driverID": 345,
+        "lastName": "Cote",
+        "firstName": "Christian",
+        "nickname": "XGB",
+        "statusCode": 18,
+        "status": {
+          "statusName": "Available",
+          "statusType": "Driver"
+        }
+      },
+      {
+        "driverID": 11265289,
+        "lastName": "Totoy",
+        "firstName": "Bibo",
+        "nickname": "Totoy",
+        "statusCode": 18,
+        "status": {
+          "statusName": "Available",
+          "statusType": "Driver"
+        }
+      },
+      {
+        "driverID": 11335567,
+        "lastName": "Dela Cruz ",
+        "firstName": "Juan",
+        "nickname": "GG",
+        "statusCode": 33,
+        "status": {
+          "statusName": "Assigned",
+          "statusType": "Driver"
+        }
+      }
+    ],
+    "vehicles": [
+      {
+        "vehicleID": "1",
+        "vehicleType": "Van",
+        "capacity": 30,
+        "image": null,
+        "plateNum": "AAA 203",
+        "model": "Grandia",
+        "brand": "Toyota",
+        "statusCode": 11,
+        "status": {
+          "statusName": "Available",
+          "statusType": "Vehicle"
+        }
+      },
+      {
+        "vehicleID": "123",
+        "vehicleType": "",
+        "capacity": 30,
+        "image": null,
+        "plateNum": "NFO 130",
+        "model": "Starex",
+        "brand": "Toyota",
+        "statusCode": 11,
+        "status": {
+          "statusName": "Available",
+          "statusType": "Vehicle"
+        }
+      },
+      {
+        "vehicleID": "123dsf",
+        "vehicleType": "Coaster",
+        "capacity": 15,
+        "image": null,
+        "plateNum": "ASD 567",
+        "model": "Fortuner",
+        "brand": "Toyota",
+        "statusCode": 11,
+        "status": {
+          "statusName": "Available",
+          "statusType": "Vehicle"
+        }
+      },
+      {
+        "vehicleID": "eer45",
+        "vehicleType": "Coaster",
+        "capacity": 30,
+        "image": null,
+        "plateNum": "EER 567",
+        "model": "Mis",
+        "brand": "Toyota",
+        "statusCode": 12,
+        "status": {
+          "statusName": "In Use",
+          "statusType": "Vehicle"
+        }
+      },
+      {
+        "vehicleID": "Hake",
+        "vehicleType": "Coaster",
+        "capacity": 30,
+        "image": null,
+        "plateNum": "Jae 456",
+        "model": "JakeSeo",
+        "brand": "JakeSeo",
+        "statusCode": 11,
+        "status": {
+          "statusName": "Available",
+          "statusType": "Vehicle"
+        }
+      },
+      {
+        "vehicleID": "HakeSeo",
+        "vehicleType": "Coaster",
+        "capacity": 40,
+        "image": null,
+        "plateNum": "Jae 234",
+        "model": "JakeSeo",
+        "brand": "JakeSeo",
+        "statusCode": 11,
+        "status": {
+          "statusName": "Available",
+          "statusType": "Vehicle"
+        }
+      },
+      {
+        "vehicleID": "hello1",
+        "vehicleType": "Private Car",
+        "capacity": 8,
+        "image": null,
+        "plateNum": "NFO 130",
+        "model": "Fortuner",
+        "brand": "Toyota",
+        "statusCode": 11,
+        "status": {
+          "statusName": "Available",
+          "statusType": "Vehicle"
+        }
+      },
+      {
+        "vehicleID": "Helloas",
+        "vehicleType": "Coaster",
+        "capacity": 50,
+        "image": null,
+        "plateNum": "GHO 123",
+        "model": "AHAHA",
+        "brand": "Toyota",
+        "statusCode": 11,
+        "status": {
+          "statusName": "Available",
+          "statusType": "Vehicle"
+        }
+      },
+      {
+        "vehicleID": "JakeSeo",
+        "vehicleType": "Minibus",
+        "capacity": 40,
+        "image": null,
+        "plateNum": "Jae 345",
+        "model": "JakeSeo",
+        "brand": "JakeSeo",
+        "statusCode": 11,
+        "status": {
+          "statusName": "Available",
+          "statusType": "Vehicle"
+        }
+      },
+      {
+        "vehicleID": "SHa 45",
+        "vehicleType": "Coaster",
+        "capacity": 50,
+        "image": null,
+        "plateNum": "Sae 456",
+        "model": "JakeSeo",
+        "brand": "JakeSeo",
+        "statusCode": 11,
+        "status": {
+          "statusName": "Available",
+          "statusType": "Vehicle"
+        }
+      }
+    ],
+    "tripScheds": [
+      {
+        "tripSchedID": 189,
+        "tripNum": "MS189",
+        "depTime": "05:30:00",
+        "periodID": 2,
+        "routeID": 1
+      },
+      {
+        "tripSchedID": 190,
+        "tripNum": "SM190",
+        "depTime": "05:30:00",
+        "periodID": 2,
+        "routeID": 2
+      },
+      {
+        "tripSchedID": 191,
+        "tripNum": "MS191",
+        "depTime": "06:00:00",
+        "periodID": 2,
+        "routeID": 1
+      },
+      {
+        "tripSchedID": 192,
+        "tripNum": "MS192",
+        "depTime": "07:00:00",
+        "periodID": 2,
+        "routeID": 1
+      },
+      {
+        "tripSchedID": 193,
+        "tripNum": "SM193",
+        "depTime": "07:00:00",
+        "periodID": 2,
+        "routeID": 2
+      },
+      {
+        "tripSchedID": 194,
+        "tripNum": "SM194",
+        "depTime": "09:00:00",
+        "periodID": 2,
+        "routeID": 2
+      },
+      {
+        "tripSchedID": 195,
+        "tripNum": "MS195",
+        "depTime": "11:00:00",
+        "periodID": 2,
+        "routeID": 1
+      }
+    ],
+    "routes": [
+      {
+        "routeID": 1,
+        "origin": "Manila ",
+        "destination": "STC",
+        "routeDescription": null,
+        "lineNum": 1
+      },
+      {
+        "routeID": 2,
+        "origin": "STC",
+        "destination": "Manila",
+        "routeDescription": null,
+        "lineNum": 1
+      }
+    ],
+    "lines": [
+      {
+        "lineNum": 1,
+        "lineName": "Manila/STC",
+        "statusCode": 31
+      },
+      {
+        "lineNum": 2,
+        "lineName": "Manila/BGC",
+        "statusCode": 31
+      },
+      {
+        "lineNum": 3,
+        "lineName": "Grace/Manila",
+        "statusCode": 31
+      }
+    ],
+    "routeStops": [
+      {
+        "stopNum": 1,
+        "order": 3,
+        "routeID": 1,
+        "stopID": 1
+      },
+      {
+        "stopNum": 2,
+        "order": 3,
+        "routeID": 2,
+        "stopID": 2
+      },
+      {
+        "stopNum": 3,
+        "order": 2,
+        "routeID": 1,
+        "stopID": 3
+      },
+      {
+        "stopNum": 4,
+        "order": 2,
+        "routeID": 1,
+        "stopID": 4
+      },
+      {
+        "stopNum": 5,
+        "order": 2,
+        "routeID": 2,
+        "stopID": 3
+      },
+      {
+        "stopNum": 6,
+        "order": 2,
+        "routeID": 2,
+        "stopID": 4
+      }
+    ],
+    "stops": [
+      {
+        "stopID": 1,
+        "stopName": "STC",
+        "latitude": null,
+        "longitude": null
+      },
+      {
+        "stopID": 2,
+        "stopName": "Manila",
+        "latitude": null,
+        "longitude": null
+      },
+      {
+        "stopID": 3,
+        "stopName": "Caltex",
+        "latitude": null,
+        "longitude": null
+      },
+      {
+        "stopID": 4,
+        "stopName": "LTI Spine",
+        "latitude": null,
+        "longitude": null
+      },
+      {
+        "stopID": 11,
+        "stopName": "DLSU Manila",
+        "latitude": "14.5642894",
+        "longitude": "120.99320280000006"
+      },
+      {
+        "stopID": 12,
+        "stopName": "Market Market",
+        "latitude": "14.5497976",
+        "longitude": "121.05522889999997"
+      },
+      {
+        "stopID": 13,
+        "stopName": "Grace Chrisitian College ",
+        "latitude": "14.650016839347723",
+        "longitude": "121.00660846032713"
+      }
+    ],
+    "users": [
+      {
+        "idNum": 11245678,
+        "name": "Hakkel",
+        "email": "shakke@dlsu.edu.ph",
+        "emergencyContact": null,
+        "emergencyContactNum": null,
+        "isAdmin": 1,
+        "adminPassword": "",
+        "statusCode": 29
+      },
+      {
+        "idNum": 11300568,
+        "name": "Shayane Tan",
+        "email": "shayane_tan@dlsu.edu.ph",
+        "emergencyContact": "sample",
+        "emergencyContactNum": "09989749385",
+        "isAdmin": 0,
+        "adminPassword": null,
+        "statusCode": null
+      },
+      {
+        "idNum": 11302518,
+        "name": "Shayane Tan",
+        "email": "shayane_tan@dlsu.edu.ph",
+        "emergencyContact": "Susan Tan",
+        "emergencyContactNum": "09989749385",
+        "isAdmin": 1,
+        "adminPassword": null,
+        "statusCode": 29
+      },
+      {
+        "idNum": 11323456,
+        "name": "David Sanchez",
+        "email": "david_sanchez@dlsu.edu.ph",
+        "emergencyContact": "David",
+        "emergencyContactNum": "09987654345",
+        "isAdmin": 1,
+        "adminPassword": null,
+        "statusCode": 29
+      },
+      {
+        "idNum": 11324578,
+        "name": "Jake Seo",
+        "email": "dong_seong_seo@dlsu.edu.ph",
+        "emergencyContact": null,
+        "emergencyContactNum": null,
+        "isAdmin": 1,
+        "adminPassword": null,
+        "statusCode": 29
+      },
+      {
+        "idNum": 11326789,
+        "name": "XGB",
+        "email": "xgb@gmail.com",
+        "emergencyContact": null,
+        "emergencyContactNum": null,
+        "isAdmin": 1,
+        "adminPassword": "$2a$12$egxG/rzawQBse.R5UCOXxOk/QQTFRfIASRkc34xIC6k0S3m9qTq.u",
+        "statusCode": 29
+      },
+      {
+        "idNum": 11330000,
+        "name": "Rodel Patrick Naui",
+        "email": "rodel_naui@dlsu.edu.ph",
+        "emergencyContact": "Boris Johnson",
+        "emergencyContactNum": "09297160927",
+        "isAdmin": 1,
+        "adminPassword": null,
+        "statusCode": 29
+      },
+      {
+        "idNum": 13433566,
+        "name": "Winona",
+        "email": "winona@dlsu.edu.ph",
+        "emergencyContact": null,
+        "emergencyContactNum": null,
+        "isAdmin": 1,
+        "adminPassword": "",
+        "statusCode": 29
+      },
+      {
+        "idNum": 75675611,
+        "name": "Christian Gabriel Cote",
+        "email": "christian_cote@dlsu.edu.ph",
+        "emergencyContact": null,
+        "emergencyContactNum": null,
+        "isAdmin": 0,
+        "adminPassword": null,
+        "statusCode": null
+      }
+    ],
+    "reservations": [
+      {
+        "reservationNum": 41,
+        "timestamp": "May 11, 2017",
+        "destination": "STC",
+        "remark": "",
+        "tripID": 408,
+        "statusCode": 2,
+        "stopNum": 2,
+        "idNum": 11302518,
+        "isTermReservation": 0,
+        "status": {
+          "statusName": "Approved",
+          "statusType": "Reservation"
+        }
+      },
+      {
+        "reservationNum": 42,
+        "timestamp": "May 12, 2017",
+        "destination": "STC",
+        "remark": "",
+        "tripID": 102,
+        "statusCode": 26,
+        "stopNum": 4,
+        "idNum": 11302518,
+        "isTermReservation": 1,
+        "status": {
+          "statusName": "Auto-Approved",
+          "statusType": "Reservation"
+        }
+      },
+      {
+        "reservationNum": 43,
+        "timestamp": "May 11, 2017",
+        "destination": "STC",
+        "remark": "Moved from 05:30 AM",
+        "tripID": 234,
+        "statusCode": 1,
+        "stopNum": 4,
+        "idNum": 11302518,
+        "isTermReservation": 1,
+        "status": {
+          "statusName": "Pending",
+          "statusType": "Reservation"
+        }
+      },
+      {
+        "reservationNum": 44,
+        "timestamp": "May 10, 2017",
+        "destination": "STC",
+        "remark": "",
+        "tripID": 110,
+        "statusCode": 26,
+        "stopNum": 4,
+        "idNum": 11302518,
+        "isTermReservation": 1,
+        "status": {
+          "statusName": "Auto-Approved",
+          "statusType": "Reservation"
+        }
+      },
+      {
+        "reservationNum": 45,
+        "timestamp": "May 10, 2017",
+        "destination": "STC",
+        "remark": "",
+        "tripID": 114,
+        "statusCode": 26,
+        "stopNum": 4,
+        "idNum": 11302518,
+        "isTermReservation": 1,
+        "status": {
+          "statusName": "Auto-Approved",
+          "statusType": "Reservation"
+        }
+      },
+      {
+        "reservationNum": 46,
+        "timestamp": "May 10, 2017",
+        "destination": "STC",
+        "remark": "",
+        "tripID": 118,
+        "statusCode": 26,
+        "stopNum": 4,
+        "idNum": 11302518,
+        "isTermReservation": 1,
+        "status": {
+          "statusName": "Auto-Approved",
+          "statusType": "Reservation"
+        }
+      },
+      {
+        "reservationNum": 47,
+        "timestamp": "May 10, 2017",
+        "destination": "STC",
+        "remark": "",
+        "tripID": 122,
+        "statusCode": 26,
+        "stopNum": 4,
+        "idNum": 11302518,
+        "isTermReservation": 1,
+        "status": {
+          "statusName": "Auto-Approved",
+          "statusType": "Reservation"
+        }
+      },
+      {
+        "reservationNum": 48,
+        "timestamp": "May 10, 2017",
+        "destination": "STC",
+        "remark": "",
+        "tripID": 126,
+        "statusCode": 26,
+        "stopNum": 4,
+        "idNum": 11302518,
+        "isTermReservation": 1,
+        "status": {
+          "statusName": "Auto-Approved",
+          "statusType": "Reservation"
+        }
+      },
+      {
+        "reservationNum": 49,
+        "timestamp": "May 10, 2017",
+        "destination": "STC",
+        "remark": "",
+        "tripID": 130,
+        "statusCode": 26,
+        "stopNum": 4,
+        "idNum": 11302518,
+        "isTermReservation": 1,
+        "status": {
+          "statusName": "Auto-Approved",
+          "statusType": "Reservation"
+        }
+      },
+      {
+        "reservationNum": 50,
+        "timestamp": "May 10, 2017",
+        "destination": "STC",
+        "remark": "",
+        "tripID": 134,
+        "statusCode": 26,
+        "stopNum": 4,
+        "idNum": 11302518,
+        "isTermReservation": 1,
+        "status": {
+          "statusName": "Auto-Approved",
+          "statusType": "Reservation"
+        }
+      }
+    ]
+  }
+}

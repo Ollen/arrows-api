@@ -7,7 +7,9 @@ const bodyParser = require('body-parser');
 
 const dbHandler = require('./../utils/db_handler');
 
+// OPTIONAL: test
 var testRouter = require('./tests/mobile_api_test');
+
 var router = express.Router();
 
 // OPTIONAL: test routers
@@ -16,9 +18,10 @@ router.use('/test', testRouter);
 // GET /mobile
 router.get('/', (req, res) => {
   dbHandler.getCurrentExpressData().then(arrowsJSON => {
+    console.log(`SUCCESS [GET ${req.originalUrl}]: Fetched data correctly` );
     res.send({arrowsJSON});
   }).catch(err => {
-    console.log(err);
+    console.log(`ERROR [GET ${req.originalUrl}]: `, err);
     res.status(500).send({
       msg: 'Error fetching data',
       code: '[500] Internal server error'
@@ -39,19 +42,31 @@ router.use((err, req, res, next) => {
 
 router.post('/', (req, res) => {
   if (req.is('application/json')) {
-    dbHandler.updateExpressData(req.body);
-    return res.send(req.body);
+    dbHandler.updateExpressData(req.body).then(() => {
+      console.log(`SUCCESS [POST ${req.originalUrl}]: Successful Update` );
+      res.send();
+    }).catch((e) => {
+      console.log(`ERROR [POST ${req.originalUrl}]: Fail Update` );
+      res.status(500).send(e);
+    });
   } else if (req.is('text/*')) {
     try {
       let rawJSON = req.body;
       let parsedJSON = JSON.parse(rawJSON);
-      return res.send(parsedJSON);  
+      dbHandler.updateExpressData(parsedJSON).then(() => {
+        console.log(`SUCCESS [POST ${req.originalUrl}]: Successful Update` );
+        res.send();
+      }).catch((e) => {
+        console.log(`ERROR [POST ${req.originalUrl}]: Fail Update` );
+        res.status(500).send(e);
+      });
     } catch (e) {
       return res.status(400).send('Bad JSON');
     }
+  } else {
+    res.status(406).send('Invalid data type');
   }
 
-  res.status(406).send('Invalid data type');
 });
 
 module.exports = router;

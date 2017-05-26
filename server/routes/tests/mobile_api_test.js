@@ -22,5 +22,15 @@ router.get('/driver', (req, res) => {
     });  
 });
 
+router.get('/trip', (req, res) => {
+  dbHandler.findAllTrips()
+    .then(users => {
+      res.send(users);
+    }).catch(err => {
+      console.log(err);
+      res.send('Error fetching express data');
+    });  
+});
+
 
 module.exports = router;
