@@ -191,8 +191,8 @@ const updateExpressData = (updateJSON) => {
       console.log('NUMBER OF UPDATE(s):', updateArr.length);
       return Promise.all(updateArr);
 
-    }).then(() => {
-      resolve();
+    }).then((s) => {
+      resolve(s);
     }).catch(e => {
       console.log('ERROR: POST Fetching DB Data');
       reject(e);

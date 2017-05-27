@@ -1,11 +1,11 @@
 /**
  * Author: Allendale S. Nato <natoallendale@gmail.com>
  */
-
 const express = require('express');
 const bodyParser = require('body-parser');
 
 const dbHandler = require('./../utils/db_handler');
+const {APILogger} = require('./../utils/logging');
 
 // OPTIONAL: test
 var testRouter = require('./tests/mobile_api_test');
@@ -18,10 +18,10 @@ router.use('/test', testRouter);
 // GET /mobile
 router.get('/', (req, res) => {
   dbHandler.getCurrentExpressData().then(arrowsJSON => {
-    console.log(`SUCCESS [GET ${req.originalUrl}]: Fetched data correctly` );
+    APILogger('S', req.method, req.originalUrl, 'Fetch Successful');
     res.send({arrowsJSON});
   }).catch(err => {
-    console.log(`ERROR [GET ${req.originalUrl}]: `, err);
+    APILogger('F', req.method, req.originalUrl, err);
     res.status(500).send({
       msg: 'Error fetching data',
       code: '[500] Internal server error'
@@ -35,6 +35,7 @@ router.use(bodyParser.json());
 // Handle JSON syntax error
 router.use((err, req, res, next) => {
   if (err instanceof SyntaxError && err.status === 400) {
+    APILogger('W', req.method, req.originalUrl, 'Bad JSON Format');
     return res.status(400).send('Bad JSON');
   }
   next();
@@ -42,11 +43,11 @@ router.use((err, req, res, next) => {
 
 router.post('/', (req, res) => {
   if (req.is('application/json')) {
-    dbHandler.updateExpressData(req.body).then(() => {
-      console.log(`SUCCESS [POST ${req.originalUrl}]: Successful Update` );
+    dbHandler.updateExpressData(req.body).then((s) => {
+      APILogger('S', req.method, req.originalUrl, 'Update Successful:' + s);
       res.send();
     }).catch((e) => {
-      console.log(`ERROR [POST ${req.originalUrl}]: Fail Update` );
+      APILogger('E', req.method, req.originalUrl, 'Update Error: ' + e);
       res.status(500).send(e);
     });
   } else if (req.is('text/*')) {
@@ -54,16 +55,18 @@ router.post('/', (req, res) => {
       let rawJSON = req.body;
       let parsedJSON = JSON.parse(rawJSON);
       dbHandler.updateExpressData(parsedJSON).then(() => {
-        console.log(`SUCCESS [POST ${req.originalUrl}]: Successful Update` );
+        APILogger('S', req.method, req.originalUrl, 'Update Successful');
         res.send();
       }).catch((e) => {
-        console.log(`ERROR [POST ${req.originalUrl}]: Fail Update` );
+        APILogger('E', req.method, req.originalUrl, 'Update Error: ' + e);
         res.status(500).send(e);
       });
     } catch (e) {
+      APILogger('S', req.method, req.originalUrl, 'Bad JSON Format');
       return res.status(400).send('Bad JSON');
     }
   } else {
+    APILogger('S', req.method, req.originalUrl, 'Invalid Data Type');
     res.status(406).send('Invalid data type');
   }
 
