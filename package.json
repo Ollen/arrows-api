@@ -14,11 +14,11 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "1.17.1",
-    "deep-diff": "^0.3.8",
+    "deep-diff": "0.3.8",
     "express": "4.15.2",
-    "lodash": "^4.17.4",
-    "mysql": "^2.13.0",
-    "sequelize": "^3.30.4"
+    "lodash": "4.17.4",
+    "mysql": "2.13.0",
+    "sequelize": "3.30.4"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
