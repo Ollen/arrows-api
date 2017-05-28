@@ -18,10 +18,10 @@ router.use('/test', testRouter);
 // GET /mobile
 router.get('/', (req, res) => {
   dbHandler.getCurrentExpressData().then(arrowsJSON => {
-    APILogger('S', req.method, req.originalUrl, 'Fetch Successful');
+    APILogger('S', req.method, req.originalUrl, 'Fetch Successful' + '\n');
     res.send({arrowsJSON});
   }).catch(err => {
-    APILogger('F', req.method, req.originalUrl, err);
+    APILogger('F', req.method, req.originalUrl, err + '\n');
     res.status(500).send({
       msg: 'Error fetching data',
       code: '[500] Internal server error'
@@ -35,7 +35,7 @@ router.use(bodyParser.json());
 // Handle JSON syntax error
 router.use((err, req, res, next) => {
   if (err instanceof SyntaxError && err.status === 400) {
-    APILogger('W', req.method, req.originalUrl, 'Bad JSON Format');
+    APILogger('W', req.method, req.originalUrl, 'Bad JSON Format' + '\n');
     return res.status(400).send('Bad JSON');
   }
   next();
@@ -44,10 +44,10 @@ router.use((err, req, res, next) => {
 router.post('/', (req, res) => {
   if (req.is('application/json')) {
     dbHandler.updateExpressData(req.body).then((s) => {
-      APILogger('S', req.method, req.originalUrl, 'Update Successful:' + s);
+      APILogger('S', req.method, req.originalUrl, 'Update Successful:' + s + '\n');
       res.send();
     }).catch((e) => {
-      APILogger('E', req.method, req.originalUrl, 'Update Error: ' + e);
+      APILogger('E', req.method, req.originalUrl, 'Update Error: ' + e + '\n');
       res.status(500).send(e);
     });
   } else if (req.is('text/*')) {
@@ -55,18 +55,18 @@ router.post('/', (req, res) => {
       let rawJSON = req.body;
       let parsedJSON = JSON.parse(rawJSON);
       dbHandler.updateExpressData(parsedJSON).then(() => {
-        APILogger('S', req.method, req.originalUrl, 'Update Successful');
+        APILogger('S', req.method, req.originalUrl, 'Update Successful' + '\n');
         res.send();
       }).catch((e) => {
-        APILogger('E', req.method, req.originalUrl, 'Update Error: ' + e);
+        APILogger('E', req.method, req.originalUrl, 'Update Error: ' + e + '\n');
         res.status(500).send(e);
       });
     } catch (e) {
-      APILogger('S', req.method, req.originalUrl, 'Bad JSON Format');
+      APILogger('S', req.method, req.originalUrl, 'Bad JSON Format' + '\n');
       return res.status(400).send('Bad JSON');
     }
   } else {
-    APILogger('S', req.method, req.originalUrl, 'Invalid Data Type');
+    APILogger('S', req.method, req.originalUrl, 'Invalid Data Type' + '\n');
     res.status(406).send('Invalid data type');
   }
 
