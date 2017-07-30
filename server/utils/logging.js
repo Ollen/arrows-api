@@ -1,6 +1,20 @@
 const fs = require('fs');
+/**
+ * Server Logger
+ * Logs all request activities and its corresponding level and message
+ * in a .log file.
+ */
 
-// Middleware
+
+/**
+ * An Express Middleware that logs the URL and HTTP method
+ * of an Express request Object.
+ * 
+ * @module
+ * @param {Object} req 
+ * @param {Object} res 
+ * @param {Function} next 
+ */
 const pathLogger = (req, res, next) => {
   let now = new Date();
   let filename = `${now.getMonth()}-${now.getDate()}-${now.getFullYear()}`;
@@ -9,7 +23,18 @@ const pathLogger = (req, res, next) => {
   next();
 };
 
-// Function
+
+
+/**
+ * A function that logs the URL, HTTP method, log level, and message
+ * of an Express request object.
+ * 
+ * @function
+ * @param {String} type 
+ * @param {String} method 
+ * @param {String} url 
+ * @param {String} log 
+ */
 const APILogger = (type, method, url, log) => {
   let now = new Date();
   let filename = `${now.getMonth()}-${now.getDate()}-${now.getFullYear()}`;
