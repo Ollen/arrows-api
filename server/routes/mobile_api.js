@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
     APILogger('S', req.method, req.originalUrl, 'Fetch Successful' + '\n');
     res.send({arrowsJSON});
   }).catch(err => {
-    APILogger('F', req.method, req.originalUrl, err + '\n');
+    APILogger('E', req.method, req.originalUrl, err + '\n');
     res.status(500).send({
       msg: 'Error fetching data',
       code: '[500] Internal server error'
@@ -62,11 +62,11 @@ router.post('/', (req, res) => {
         res.status(500).send(e);
       });
     } catch (e) {
-      APILogger('S', req.method, req.originalUrl, 'Bad JSON Format' + '\n');
+      APILogger('E', req.method, req.originalUrl, 'Bad JSON Format' + '\n');
       return res.status(400).send('Bad JSON');
     }
   } else {
-    APILogger('S', req.method, req.originalUrl, 'Invalid Data Type' + '\n');
+    APILogger('E', req.method, req.originalUrl, 'Invalid Data Type' + '\n');
     res.status(406).send('Invalid data type');
   }
 

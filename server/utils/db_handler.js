@@ -1,3 +1,8 @@
+/**
+ * @author Allendale nato <natoallendale@gmail.com>
+ * Contains all Arrows DB transactions and operations.
+ */
+
 const db = require('./../db/database');
 const _ = require('lodash');
 const diff = require('deep-diff');
@@ -171,7 +176,7 @@ const updateExpressData = (updateJSON) => {
           }
         }));
       }
-
+      // Update Reservation
       for (let i = 0; i < reserveDiff.length; i++) {
         updateArr.push(db.passenger.update({
           destination: reserveUpdate[reserveDiff[i].path[0]].destination,

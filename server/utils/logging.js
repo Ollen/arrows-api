@@ -1,5 +1,6 @@
 const fs = require('fs');
 /**
+ * @author Allendale Nato <natoallendale@gmail.com>
  * Server Logger
  * Logs all request activities and its corresponding level and message
  * in a .log file.
@@ -22,8 +23,6 @@ const pathLogger = (req, res, next) => {
   fs.appendFile(`./server/logs/${filename}.log`, log + '\n');  
   next();
 };
-
-
 
 /**
  * A function that logs the URL, HTTP method, log level, and message

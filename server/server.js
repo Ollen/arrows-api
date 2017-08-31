@@ -1,5 +1,5 @@
 /**
- * Author: Allendale S. Nato
+ * @author Allendale S. Nato <natoallendale@gmail.com>
  */
 
 const express = require('express');
