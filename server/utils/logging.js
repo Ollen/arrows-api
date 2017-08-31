@@ -20,7 +20,11 @@ const pathLogger = (req, res, next) => {
   let now = new Date();
   let filename = `${now.getMonth()}-${now.getDate()}-${now.getFullYear()}`;
   var log = `${now.toUTCString()}: ${req.method} ${req.url}`;
-  fs.appendFile(`./server/logs/${filename}.log`, log + '\n');  
+  fs.appendFile(`./server/logs/${filename}.log`, log + '\n', err => {
+    if (err) {
+      console.log('Error logging data', err);
+    }
+  });  
   next();
 };
 
@@ -38,7 +42,11 @@ const APILogger = (type, method, url, log) => {
   let now = new Date();
   let filename = `${now.getMonth()}-${now.getDate()}-${now.getFullYear()}`;
   var mainLog = `${now.toUTCString()}: [${type}] ${method} ${url} \n${log}`;
-  fs.appendFile(`./server/logs/${filename}.log`, mainLog + '\n');  
+  fs.appendFile(`./server/logs/${filename}.log`, mainLog + '\n', err => {
+    if (err) {
+      console.log('Error logging data', err);
+    }
+  });  
 };
 
 module.exports = {pathLogger, APILogger};
