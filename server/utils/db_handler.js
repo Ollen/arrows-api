@@ -161,7 +161,7 @@ const getCurrentExpressData_alt = async () => {
     return arrowsJSON;
   } catch (e) {
     console.log(e);
-    throw new Error('Error fetching data');
+    throw new Error(e);
   }
 };
 
@@ -288,6 +288,124 @@ const updateExpressData = (updateJSON) => {
   //return update;
 };
 
+const updateExpressData_alt = async (updateJSON) => {
+  // Pick update data
+  let update = _.pick(updateJSON.arrowsJSON, ['trips', 'reservations', 'passengers']);
+  let tripUpdate    = update.trips;
+  let reserveUpdate = update.reservations;
+  let passUpdate    = update.passengers;
+
+  try {
+    let db_data = await Promise.all([
+      db.trip.findAll({
+        attributes: {
+          include: [
+                [db.connection.fn('date_format', db.connection.col('tripDate'), '%M %d, %Y'), 'tripDate']
+          ],
+          exclude: ['manageTime']
+        },
+        where: {
+          tripDate: new Date('2017-05-10').setUTCHours(0,0,0,0)
+        },
+        raw: true
+      }),
+      db.reservation.findAll({
+        attributes: {
+          include: [
+              [db.connection.fn('date_format', db.connection.col('timestamp'), '%M %d, %Y'), 'timestamp']
+          ]
+        },
+        raw: true
+      }),
+      db.passenger.findAll({
+        attributes: {
+          exclude: ['rating']
+        },
+        raw: true
+      })
+    ])
+  
+    // Compare data
+    let tripDiff = _.filter(diff(db_data[0], tripUpdate), {'kind': 'E'});
+    let reserveDiff = _.filter(diff(db_data[1], reserveUpdate), {'kind': 'E'});
+    let passDiff = _.filter(diff(db_data[2], passUpdate), {'kind': 'E'});
+  
+    // Update Reservation
+    /** Uncomment for Debugging Purposes
+     * 
+     * console.log(tripDiff);
+     * console.log(passDiff);
+     * console.log(reserveDiff);
+     * 
+     */
+  
+    // Filter unique IDs 
+    tripDiff = _.uniqBy(tripDiff, x => {return x.path[0];});
+    reserveDiff = _.uniqBy(reserveDiff, x => {return x.path[0];});
+    passDiff = _.uniqBy(passDiff, x => {return x.path[0];});
+  
+  
+    let updateArr = new Array();
+  
+    // Update Passenger
+    for (let i = 0; i < passDiff.length; i++) {
+      updateArr.push(db.passenger.update({
+        feedbackOn: passUpdate[passDiff[i].path[0]].feedbackOn,
+        tapIn: passUpdate[passDiff[i].path[0]].tapIn,
+        tapOut: passUpdate[passDiff[i].path[0]].tapOut,
+        disembarkationPt: passUpdate[passDiff[i].path[0]].disembarkationPt,
+        destination: passUpdate[passDiff[i].path[0]].destination,
+        isChance: passUpdate[passDiff[i].path[0]].isChance,
+        reservationNum: passUpdate[passDiff[i].path[0]].reservationNum
+      }, {
+        where: {
+          passengerID: passUpdate[passDiff[i].path[0]].passengerID
+        }
+      }));
+    }
+    // Update Trip
+    for (let i = 0; i < tripDiff.length; i++) {
+      updateArr.push(db.trip.update({
+        remarks: tripUpdate[tripDiff[i].path[0]].remarks,
+        depTime: tripUpdate[tripDiff[i].path[0]].depTime,
+        arrivalTime: tripUpdate[tripDiff[i].path[0]].arrivalTime,
+        duration: tripUpdate[tripDiff[i].path[0]].duration,
+        tripSchedID: tripUpdate[tripDiff[i].path[0]].tripSchedID,
+        statusCode: tripUpdate[tripDiff[i].path[0]].statusCode
+      }, {
+        where: {
+          tripID: tripUpdate[tripDiff[i].path[0]].tripID
+        }
+      }));
+    }
+    // Update Reservation
+    for (let i = 0; i < reserveDiff.length; i++) {
+      updateArr.push(db.passenger.update({
+        destination: reserveUpdate[reserveDiff[i].path[0]].destination,
+        remark: reserveUpdate[reserveDiff[i].path[0]].remark,
+        tripID: reserveUpdate[reserveDiff[i].path[0]].tripID,
+        statusCode: reserveUpdate[reserveDiff[i].path[0]].statusCode,
+        stopNum: reserveUpdate[reserveDiff[i].path[0]].stopNum,
+        idNum: reserveUpdate[reserveDiff[i].path[0]].idNum,
+        isTermReservation: reserveUpdate[reserveDiff[i].path[0]].isTermReservation
+      }, {
+        where: {
+          reservationNum: reserveUpdate[reserveDiff[i].path[0]].reservationNum
+        }
+      }));
+    }
+  
+    console.log('NUMBER OF UPDATE(s):', updateArr.length);
+
+    return await Promise.all(updateArr);
+
+  } catch (e) {
+    console.log('ERROR: POST Fetching DB Data');
+    throw new Error(e);
+  }
+
+};
+
 // Test purposes
 var findAllUsers = () => {
   return db.user.findAll();
@@ -329,6 +447,7 @@ module.exports = {
   getCurrentExpressData,
   getCurrentExpressData_alt,
   updateExpressData,
+  updateExpressData_alt,
   findAllUsers,
   findAllDrivers,
   findAllTrips,

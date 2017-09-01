@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
     APILogger('S', req.method, req.originalUrl, 'Fetch Successful' + '\n');
     res.send({arrowsJSON});
   }).catch(err => {
-    APILogger('E', req.method, req.originalUrl, err + '\n');
+    APILogger('E', req.method, req.originalUrl, 'Fetch Unseuccessful: ' + err + '\n');
     res.status(500).send({
       msg: 'Error fetching data',
       code: '[500] Internal server error'
@@ -43,7 +43,7 @@ router.use((err, req, res, next) => {
 
 router.post('/', (req, res) => {
   if (req.is('application/json')) {
-    dbHandler.updateExpressData(req.body).then((s) => {
+    dbHandler.updateExpressData_alt(req.body).then((s) => {
       APILogger('S', req.method, req.originalUrl, 'Update Successful:' + s + '\n');
       res.send();
     }).catch((e) => {
@@ -54,7 +54,7 @@ router.post('/', (req, res) => {
     try {
       let rawJSON = req.body;
       let parsedJSON = JSON.parse(rawJSON);
-      dbHandler.updateExpressData(parsedJSON).then(() => {
+      dbHandler.updateExpressData_alt(parsedJSON).then(() => {
         APILogger('S', req.method, req.originalUrl, 'Update Successful' + '\n');
         res.send();
       }).catch((e) => {
