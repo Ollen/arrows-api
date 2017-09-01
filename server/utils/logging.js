@@ -18,7 +18,7 @@ const fs = require('fs');
  */
 const pathLogger = (req, res, next) => {
   let now = new Date();
-  let filename = `${now.getMonth()}-${now.getDate()}-${now.getFullYear()}`;
+  let filename = `${now.getMonth() + 1}-${now.getDate()}-${now.getFullYear()}`;
   var log = `${now.toUTCString()}: ${req.method} ${req.url}`;
   fs.appendFile(`./server/logs/${filename}.log`, log + '\n', err => {
     if (err) {

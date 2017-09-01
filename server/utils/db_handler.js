@@ -86,6 +86,85 @@ const getCurrentExpressData = () => {
   });
 };
 
+const getCurrentExpressData_alt = async () => {
+  try {
+    let data = await Promise.all([
+      db.trip.findAll({
+        include: [{
+          model: db.trip_assignment,
+          attributes: ['vehicleID', 'driverID']
+        }],
+        attributes: {
+          include: [
+            [db.connection.fn('date_format', db.connection.col('tripDate'), '%M %d, %Y'), 'tripDate']
+          ],
+          exclude: ['manageTime']
+        },
+        where: {
+          tripDate: new Date('2017-05-10').setUTCHours(0,0,0,0)
+        }, 
+        logging: false
+      }),
+      db.passenger.findAll({
+        attributes: {
+          exclude: ['rating']
+        },
+        logging: false
+      }),
+      db.driver.findAll({
+        include: [{
+          model: db.status,
+          attributes: ['statusName', 'statusType']
+        }],
+        logging: false
+      }),
+      db.vehicle.findAll({
+        include: [{
+          model: db.status,
+          attributes: ['statusName', 'statusType']
+        }],
+        logging: false
+      }),
+      db.trip_sched.findAll({logging: false}),
+      db.route.findAll({logging: false}),
+      db.line.findAll({logging: false}),
+      db.route_stop.findAll({logging: false}),
+      db.stop.findAll({logging: false}),
+      db.user.findAll({logging: false}),
+      db.reservation.findAll({
+        include: [{
+          model: db.status,
+          attributes: ['statusName', 'statusType']
+        }],
+        attributes: {
+          include: [
+            [db.connection.fn('date_format', db.connection.col('timestamp'), '%M %d, %Y'), 'timestamp']
+          ]
+        },
+        logging: false
+      })
+    ]);
+
+    let arrowsJSON = {};
+    arrowsJSON.trips = data[0];
+    arrowsJSON.passengers = data[1];
+    arrowsJSON.drivers = data[2];
+    arrowsJSON.vehicles = data[3];
+    arrowsJSON.tripScheds = data[4];
+    arrowsJSON.routes = data[5];
+    arrowsJSON.lines = data[6];
+    arrowsJSON.routeStops = data[7];
+    arrowsJSON.stops = data[8];
+    arrowsJSON.users = data[9];
+    arrowsJSON.reservations = data[10];
+
+    return arrowsJSON;
+  } catch (e) {
+    console.log(e);
+    throw new Error('Error fetching data');
+  }
+};
+
 const updateExpressData = (updateJSON) => {
   // Pick update data
   let update = _.pick(updateJSON.arrowsJSON, ['trips', 'reservations', 'passengers']);
@@ -248,6 +327,7 @@ const updateTest = () => {
 
 module.exports = {
   getCurrentExpressData,
+  getCurrentExpressData_alt,
   updateExpressData,
   findAllUsers,
   findAllDrivers,

@@ -17,7 +17,7 @@ router.use('/test', testRouter);
 
 // GET /mobile
 router.get('/', (req, res) => {
-  dbHandler.getCurrentExpressData().then(arrowsJSON => {
+  dbHandler.getCurrentExpressData_alt().then(arrowsJSON => {
     APILogger('S', req.method, req.originalUrl, 'Fetch Successful' + '\n');
     res.send({arrowsJSON});
   }).catch(err => {
